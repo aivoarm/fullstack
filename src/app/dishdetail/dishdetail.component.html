@@ -9,7 +9,7 @@
 <!--<app-dishdetail></app-dishdetail>-->
   
   <div fxFlex="40">
-          <md-card>
+          <md-card *ngIf = "dish">
                 <md-card-header>
                   <md-card-title>
                     <h3>{{dish.name | uppercase}}</h3>
@@ -17,7 +17,7 @@
                 </md-card-header>
                 <img md-card-image src={{dish.image}} alt={{dish.name}}>
                 <md-card-content>
-                  <p>{{dish.description}}
+                  <p>{{dish[0].description}}
                   </p>
                 </md-card-content>
                 <md-card-actions>
@@ -29,7 +29,7 @@
   </div>
 
   <div fxFlex="40">
-                   <md-list fxFlex>
+                   <md-list *ngIf = "dish">
                       <h3>Comments</h3>
                   <md-list-item *ngFor="let com of dish.comments">
                    
